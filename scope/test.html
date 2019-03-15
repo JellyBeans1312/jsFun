@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>testing</title>
+</head>
+<body>
+  <script>
+    let num = 6;
+
+    const fn1 = function() {
+      let num = 4;
+
+      // Log A: num - 4
+      console.log('A: ', num);
+      if (num < 5) {
+        const num = 9;
+
+        fn2(num);
+
+        const newNum = num;
+
+        // Log B: newNum - 9
+        console.log('B: ', num);
+      }
+
+      newNum = num;
+
+      // Log C: newNum - 4
+      console.log('C: ', num);
+    };
+
+    const fn2 = function(num){
+      // Log D: num - 9
+      console.log('D: ', num);
+      num = num + 1;
+
+      // Log E: num - 10
+      console.log('E: ', num);
+    };
+
+    fn1();
+
+  </script>
+
+</body>
+</html>
